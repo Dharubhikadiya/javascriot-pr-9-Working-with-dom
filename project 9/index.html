@@ -1,0 +1,36 @@
+<form align="center" style="margin-top: 30px;">
+
+    <label>Row :-</label>
+    <input type="number" id="row"><br><br>
+
+    <label>Column :- </label>
+    <input type="number" id="column"><br><br>
+
+    <input type="button" onclick="tbl()" value="submit" style="padding:10 20px; margin: 10px; background-color: rgb(255, 255, 255);">
+</form>
+
+<table id="root" border="1" align="center" cellspacing="0" cellpadding="20"></table>
+
+<script type="text/javascript">
+
+    let sum = () => {
+        document.getElementById('row').value = '';
+        document.getElementById('column').value = '';
+    }
+    let tbl = () => {
+        i = document.getElementById('row').value;
+        j = document.getElementById('column').value;
+        {
+            for (let row = 0; row < i; row++) {
+                let tr = document.createElement('tr');
+
+                for (let col = 0; col < j; col++) {
+                    let td = document.createElement('td');
+                    tr.appendChild(td);
+                }
+                root.appendChild(tr);
+            }
+        }
+        sum();
+    }
+</script>
